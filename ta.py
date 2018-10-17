@@ -70,11 +70,11 @@ for list_iterator in range(0, length):
 
 
 
-    													# to search 
-    query = series_list[list_iterator] + " imdb"							# searching the IMDb movie page on Google
+    																		# to search 
+	query = series_list[list_iterator] + " imdb"							# searching the IMDb movie page on Google
   
-    for link_iterator in search(query, tld="co.in", num=1, stop=1, pause=2): 
-        quote_page = link_iterator											# Link to the IMDb site of the series from where we'll scrap data further
+    	for link_iterator in search(query, tld="co.in", num=1, stop=1, pause=2): 
+       	 quote_page = link_iterator											# Link to the IMDb site of the series from where we'll scrap data further
 
     	
 	result = quote_page.find('imdb')										# finding string IMDb in the fist url obtained in google search		
@@ -157,20 +157,20 @@ for list_iterator in range(0, length):
 						last_element = dates_of_latest_season[it].string
 
 						lengthDate = len(last_element)    
+						
+						last_string = last_element.lstrip()												#remove spaces from the string
 		
-						if (first_string[1] != " " and  first_string[2] != " "):					#checking if only year is mentioned													
+						if (last_string[1] != " " and  last_string[2] != " "):					#checking if only year is mentioned													
 
-							s = last_element.lstrip()												#remove spaces from the string
+							
 
-							message = message + "Tv series name: "+" "+series_list[list_iterator]+"\n" + "Status: " + "The next season begins in "+ s+"\n\n"
+							message = message + "Tv series name: "+" "+series_list[list_iterator]+"\n" + "Status: " + "The next season begins in "+ last_string+"\n\n"
 
 						else:
 
-							s = last_element.lstrip()												#remove the leftmost spaces from the string
-
 							monthNo = months.index(s[3:7])+1
 
-							message = message + "Tv series name: "+" "+series_list[list_iterator]+"\n" + "Status: "+"The next episode airs on "+ str(s[8:12])+"-"+str(monthNo)+"-"+str(s[0:2])+"\n\n"
+							message = message + "Tv series name: "+" "+series_list[list_iterator]+"\n" + "Status: "+"The next episode airs on "+ str(last_string[8:12])+"-"+str(monthNo)+"-"+str(last_string[0:2])+"\n\n"
 	con.commit()                                													#commiting respective changes in the database				
 
 print message
