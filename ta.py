@@ -17,11 +17,9 @@ def sendEmail(msg, email):
 
 	s.starttls()
 
-	s.login("16ucs110@lnmiit.ac.in", "anju1031999")							#The sender needs to enter his email and password 
+	s.login("enter_your_email", "enter_your_password")							#The sender needs to enter his email and password 
 
-	s.sendmail("16ucs110@lnmiit.ac.in", "16ucs110@lnmiit.ac.in", msg)
-
-	s.sendmail("16ucs110@lnmiit", email, msg)
+	s.sendmail("enter_your_email", email, msg)
 
 
 	s.quit() 

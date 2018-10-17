@@ -50,6 +50,7 @@ To be able to send mails from python you need to follow the steps below
 
 RUNNING THE CODE:
 
+First you'll have to enter your emailid along with the password in the sendMail function.That will be our's senders ID.
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 The code can be run by running the file Innovaccer.py on terminal
 The input for the file will be the mail id of user and the series he wants to be updated about seperated by ",".
