@@ -70,7 +70,7 @@ for list_iterator in range(0, length):
 
 
 
-     to search 
+    													# to search 
     query = series_list[list_iterator] + " imdb"							# searching the IMDb movie page on Google
   
     for link_iterator in search(query, tld="co.in", num=1, stop=1, pause=2): 
